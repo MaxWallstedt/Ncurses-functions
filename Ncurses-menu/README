@@ -1,0 +1,80 @@
+                    Ncurses-menu by Max Wällstedt
+
+Ncurses-menu is a function for use with the Ncurses (or similar) library.
+It will print a menu from the coordinates you entered with the contents
+you specify (see below for details).
+
+To use Ncurses-menu in your program, you just include "ncurses-menu.h" at
+the top of your program and call the function "print_menu", as shown below.
+It's important that you've already initialised the stdscr window before
+calling print_menu. If you wish to use print_menu for a different window,
+you'll have to edit Ncurses-menu's source code according to your needs.
+
+The prototype looks like this:
+
+    int print_menu (int sty,
+                    int x,
+                    int alts,
+                    int width,
+                    char title[],
+                    char entries[][100],
+                    int start);
+
+"sty" is the y-coordinate and "x" is the x-coordinate where the menu's top
+left corner will start printing from. (0, 0) is the terminals top left
+corner.
+
+"alts" is the number of entries your menu will be able to browse between.
+
+"width" is the minimum width of your menu. If a word in your menu is longer
+than the entered width, width will extend to the length of the longest
+word.
+
+"title[]" is the title of your menu. It will be printed centered in the top
+cell of your menu.
+
+"entries[][100]" is the 2-dimensional array containing the different
+entries that your menu will browse between. It's important that each entry
+is an array of 100 elements.
+
+"start" is the first entry that will be highlighted when called.
+
+The return value of print_menu is the final cells's number before you
+pressed 'Enter'.
+
+                    Compiling Ncurses-menu
+
+I've only tried to compile Ncurses-menu with GNU's C-compiler (gcc).
+On Windows, it compiles and runs fine with MinGW and PDCurses.
+If you compile an exe-file on Windows, I would recommend using the -static
+switch after -lpdcursed, as most Windows users don't want to install
+libraries just to run your program.
+
+On GNU/Linux, Ncurses-menu compiles with Ncurses (as one might suspect).
+It's not necessary to compile with -static, and please don't.
+I typically use -lncursesw, but you could probably use -lncurses just fine
+if that's what you want.
+
+I've included an example program ("ncurses-menu-example.c") to give you
+a hint of how to use Ncurses-menu. The source code is probably more
+interesting than running a compiled version. You can however compile it
+with (assuming you currently stand in the src directory):
+
+GNU/Linux:
+    user@machine:/.../Ncurses-menu/src$ gcc -Wall *.c -o Menu -lncursesw
+
+Windows:
+    X:\...\Ncurses-menu\src> gcc -Wall *.c -o Menu.exe -lnpdcurses -static
+
+                    License
+
+Ncurses-menu is Free Software under GNU General Public License version 3
+or later (GPLv3+). See the file "COPYING" for details.
+
+If you have any suggestions regarding Ncurses-menu, like a bug fix, new
+feature, optimisation or alike, please don't hesitate to contact me by
+email (max.wallstedt@gmail.com).
+You can also pull patches via git.
+
+regards
+Max Wällstedt

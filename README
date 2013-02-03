@@ -1,0 +1,20 @@
+                    Ncurses-functions
+
+This folder contains functions created by me (Max Wällstedt) for use with
+the Ncurses (or similar) library.
+
+The license of the functions can be found in the root directory of each
+function.
+
+The current functions of this folder are:
+
+    Ncurses-menu
+        A menu in a curses-program where you easily enter some values
+        and a menu according to those values will be printed.
+
+If you find any bugs or come up with a more clever way to do something
+in my functions, please tell me by email (max.wallstedt@gmail.com).
+You can also pull patches via git.
+
+regards
+Max Wällstedt
