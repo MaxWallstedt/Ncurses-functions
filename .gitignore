@@ -1,0 +1,14 @@
+#vim generates .swp
+*.swp
+
+#object files and stuff
+*[oa]
+
+#emacs generates these, but who would use emacs?
+*~
+
+#exe is a rare extention for executable programs.
+*.exe
+
+#gcc automatically generates these buggers.
+*.out
