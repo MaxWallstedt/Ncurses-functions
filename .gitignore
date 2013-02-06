@@ -10,5 +10,8 @@
 #exe is a rare extention for executable programs.
 *.exe
 
+#bats are dangerous, beware!
+*.bat
+
 #gcc automatically generates these buggers.
 *.out

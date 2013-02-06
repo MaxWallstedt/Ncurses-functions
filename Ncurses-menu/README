@@ -74,7 +74,8 @@ or later (GPLv3+). See the file "COPYING" for details.
 If you have any suggestions regarding Ncurses-menu, like a bug fix, new
 feature, optimisation or alike, please don't hesitate to contact me by
 email (max.wallstedt@gmail.com).
-You can also pull patches via git.
+You can also contribute via git
+(repo: https://github.com/MaxWallstedt/Ncurses-functions).
 
 regards
 Max Wällstedt

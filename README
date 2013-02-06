@@ -12,9 +12,14 @@ The current functions of this folder are:
         A menu in a curses-program where you easily enter some values
         and a menu according to those values will be printed.
 
+    Ncurses-readstring
+        Reads a string from the keyboard and prints it according to
+        your specifications (like coordinates and maximum length).
+
 If you find any bugs or come up with a more clever way to do something
 in my functions, please tell me by email (max.wallstedt@gmail.com).
-You can also pull patches via git.
+You can also contribute via git
+(repo: https://github.com/MaxWallstedt/Ncurses-functions).
 
 regards
 Max Wällstedt

@@ -1,0 +1,76 @@
+                    Ncurses-readstring by Max Wällstedt
+
+Ncurses-readstring is a function for use with the Ncurses (or similar)
+library. It will read a string from the keyboard and echo the string as it
+is typed according to your specifications (see below for details).
+
+To use Ncurses-readstring in your program, you just include
+"ncurses-readstring.h" at the top of your program and call the function
+"mvreadstr", as shown below.
+It's important that you've already initialised the stdscr window before
+calling print_readstring. If you wish to use print_readstring for a
+different window, you'll have to edit Ncurses-menu's source code according
+to your needs.
+A current issue on GNU/Linux-systems is that some foreign characters (like
+'å', 'ä' and 'ö') moves the cursor two steps to the right instead of one.
+The string seems to be fine, except that the string can contain less
+characters than before.
+
+The prototype looks like this:
+
+    int mvreadstr (int y,
+                   int x,
+                   char *str,
+                   int maxn,
+                   int curss);
+
+"y" is the y-coordinate and "x" is the x-coordinate where the string will
+start to echo.
+
+"*str" is the string variable that will contain the entered string.
+
+"maxn" is the maximum amount of characters that can be entered to your
+string.
+
+"curss" determines the visibility of the cursor after the string has been
+entered. 0 is invisible, 1 is normal and 2 is very visible
+
+                    Compiling Ncurses-readstring
+
+I've only tried to compile Ncurses-readstring with GNU's C-compiler (gcc).
+On Windows, it compiles and runs fine with MinGW and PDCurses.
+If you compile an exe-file on Windows, I would recommend using the -static
+switch after -lpdcursed, as most Windows users don't want to install
+libraries just to run your program.
+
+On GNU/Linux, Ncurses-readstring compiles with Ncurses (as one might
+suspect). It's not necessary to compile with -static, and please don't.
+I typically use -lncursesw, but you could probably use -lncurses just fine
+if that's what you want.
+
+I've included an example program ("ncurses-readstring-example.c") to give
+you a hint of how to use Ncurses-readstring. The source code is probably
+more interesting than running a compiled version. You can however compile
+it with (assuming you currently stand in the src directory):
+
+GNU/Linux:
+    user@machine:/.../Ncurses-readstring/src$ gcc -Wall *.c -o ReadString
+                                        -lncursesw
+
+Windows:
+    X:\...\Ncurses-readstring\src> gcc -Wall *.c -o ReadString.exe
+                             -lnpdcurses -static
+
+                    License
+
+Ncurses-readstring is Free Software under GNU General Public License version 3
+or later (GPLv3+). See the file "COPYING" for details.
+
+If you have any suggestions regarding Ncurses-readstring, like a bug fix,
+new features, optimisation or alike, please don't hesitate to contact me by
+email (max.wallstedt@gmail.com).
+You can also contribute via git
+(repo: https://github.com/MaxWallstedt/Ncurses-functions).
+
+regards
+Max Wällstedt
